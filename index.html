@@ -15,33 +15,34 @@
 
 <body style="width: 100%;">
 
-<div class="title-mask", id="title-mask">
-    <div style="position: absolute; top:10%; left: 0; right: 0;">
-      <div class='logo'><img src="assests/logo6.png"></div>
-       
-        <!-- <h1><font style="color: red; text-shadow: 0.05em -0.05em rgba(255, 200, 160, 0.634);">LAMP</font>: <font style="color: red;">L</font>earn <font style="color: red;">A</font> <font style="color: red;">M</font>otion <font style="color: red;">P</font>attern for Few-Shot-Based Video Generation</h1> -->
-        <h1><font style="color: pink; text-shadow: 0.05em -0.05em rgba(255, 200, 160, 0.634);">Panacea</font>: <font style="color: pink;">Pan</font>oramic <font style="color: pink;">a</font>nd <font style="color: pink;">C</font>ontrollable Vid<font style="color: pink;">e</font>o Generation for <font style="color: pink;">A</font>utonomous Driving</h1>
+<div style="background-color: white; margin-right: auto; margin-left: auto;">
+    <div class="root-content" style="padding-top: 50px; width: 65%;">
+        <h1> <div class='logo'><img src="assests/logo6.png"></div><font style="color: pink;">Panacea</font>: <font style="color: pink;">Pan</font>oramic <font style="color: pink;">a</font>nd <font style="color: pink;">C</font>ontrollable Vid<font style="color: pink;">e</font>o Generation for <font style="color: pink;">A</font>utonomous Driving</h1>
         <!-- <br> -->
-        <p style="font-size: 18px; color: burlywood;">
-            Yuqing Wen<sup>1,2*</sup>, &nbsp;&nbsp;
+        <p style="font-size: 18px; color: black;">
+            Yuqing Wen<sup>1,&dagger;</sup>, &nbsp;&nbsp;
             Yucheng Zhao<sup>2*</sup>, &nbsp;&nbsp;
             Yingfei Liu<sup>2*</sup>, &nbsp;&nbsp;
             Fan Jia<sup>2</sup>, &nbsp;&nbsp;
             Yanhui Wang<sup>1</sup>, &nbsp;&nbsp; <br>
             Chong Luo<sup>1</sup>, &nbsp;&nbsp;
             Chi Zhang<sup>3</sup>, &nbsp;&nbsp;
-            Tiancai Wang<sup>2</sup>, &nbsp;&nbsp;
-            Xiaoyan Sun<sup>1</sup>, &nbsp;&nbsp;
-            Xiangyu Zhang<sup>2</sup>, &nbsp;&nbsp;
+            Tiancai Wang<sup>2,&dagger;</sup>, &nbsp;&nbsp;
+            Xiaoyan Sun<sup>1,&dagger;</sup>, &nbsp;&nbsp;
+            Xiangyu Zhang<sup>2</sup> &nbsp;&nbsp;
 
         </p>
-        <p style="font-size: 16px; color: burlywood;">
-          University of Science and Technology of China<sup>1</sup>, &nbsp;&nbsp;
-            MEGVII Technology<sup>2</sup>, &nbsp;&nbsp;
-            Mach Drive<sup>3</sup>
+        <p style="font-size: 16px; color: black;">
+            <sup>1</sup>University of Science and Technology of China, &nbsp;&nbsp;
+            <sup>2</sup>MEGVII Technology, &nbsp;&nbsp;
+            <sup>3</sup>Mach Drive
         </p>
-    </div>
-    <div id="button-list">
+        <p style="font-size: 16px; color: black;">
+            <sup>*</sup>Equal Contribution. &nbsp;&nbsp;
+            <sup>&dagger;</sup>This work was done during the internship at MEGVII. &nbsp;&nbsp;
+            <sup>&Dagger;</sup>Corresponding Author.
+        </p>
+
         <span class="link-button">
             <a class="link-button-content", href="">
                 <span>
@@ -60,7 +61,6 @@
                 Supp (More Visual Results)
             </a>
         </span>
-       
         <span class="link-button">
             <a class="link-button-content", href="#bib">
                 <span>
@@ -70,25 +70,22 @@
                 BibTex
             </a>
         </span>
-    </div>
-    <div class="click", id="scroll-btn">
-        <div class="circle-breath"></div>
-    </div>
-    <!-- <div class="click">
-        <p>Click to learn more</p>
-    </div> -->
+        <br>
+      </div>
 </div>
-<div style="background-color: white; margin-right: auto; margin-left: auto;">
+<br>
+
+<div style="background-color: #f5f5f5; margin-right: auto; margin-left: auto;">
     <a name="method"></a>
-    <div class="root-content" style="padding-top: 400px; width: 65%;">
+    <div class="root-content" style="padding-top: 10px; width: 65%;">
         <h1 class="section-name">&#128293; Generating <font style="color: red;">Multi-View and Controllable</font> Videos for Autonoumous Driving&#128293;</h1>
         <img src="assests/pipeline.png" style="margin:auto; right: 0; left: 0; width: 90%; display: inline;">
-        <p class="section-content-text" style="padding-bottom: 20px;"><strong>Overview of Panacea.</strong>(a). The diffusion training process of Panacea, enabled by a diffusion encoder and decoder with the
+        <p class="section-content-text" style="padding-bottom: 20px;"><strong>Overview of Panacea. </strong>(a). The diffusion training process of Panacea, enabled by a diffusion encoder and decoder with the
           decomposed 4D attention module. (b). The decomposed 4D attention module comprises three components: intra-view attention for spatial
           processing within individual views, cross-view attention to engage with adjacent views, and cross-frame attention for temporal processing.
           (c). Controllable module for the integration of diverse signals. The image conditions are derived from a frozen VAE encoder and combined
           with diffused noises. The text prompts are processed through a frozen CLIP encoder, while BEV sequences are handled via ControlNet.
-          (d). The details of BEV layout sequences, including projected bounding boxes, object depths, road maps and cam.</p>
+          (d). The details of BEV layout sequences, including projected bounding boxes, object depths, road maps and camera pose.</p>
         <img src="assests/pipeline_inference.png" style="margin:auto; right: 0; left: 0; width: 65%; display: inline;">
         <p class="section-content-text" style="padding-bottom: 20px;"><strong>The two-stage inference pipeline of Panacea.</strong> Its two-
           stage process begins by creating multi-view images with BEV lay-
@@ -96,7 +93,8 @@
           layouts, to facilitate the generation of following frames.</p>
       </div>
 </div>
-<div style="background-color: #f5f5f5; margin-right: auto; margin-left: auto;">
+
+<div style="background-color: white; margin-right: auto; margin-left: auto;">
     <div class="root-content" style="padding-top: 10px; width: 65%; padding-bottom: 10px;">
         <h1 class="section-name">&#127916;&nbsp;&nbsp; BEV-guided Video Generation &nbsp;&nbsp;&#127916;</h1>
         <table style="width: 100%;">
@@ -117,7 +115,7 @@
         <p class="section-content-text"><strong>Controllable multi-view video generation. Panacea is able to generate realistic, controllable videos with good temporal and view consistensy.</strong></p>
     </div>
 </div>
-<div style="background-color: white; margin-right: auto; margin-left: auto;">
+<div style="background-color: #f5f5f5; margin-right: auto; margin-left: auto;">
     <div class="root-content" style="padding-top: 10px;width: 65%; padding-bottom: 10px;">
         <h1 class="section-name">&#127902;&nbsp;&nbsp; Attribute Controllable Video Generation &nbsp;&nbsp;&#127902;</h1>
         <table style="width: 100%;">
@@ -162,6 +160,9 @@
             <pre style="margin-top: 5px;" class="bibtex">
                 <code>
 @artical{wen2023panacea,
+    title={Panacea: Panoramic and Controllable Video Generation for Autonomous Driving},
+    author={Yuqing Wen and Yucheng Zhao and Yingfei Liu and Fan Jia and Yanhui Wang and Chong Luo1 and Chi Zhang and Tiancai Wang and Xiaoyan Sun and Xiangyu Zhang},
+    year={2023}
 }</code></pre>
         </div>
         <div style="margin-bottom: 0px;">
@@ -169,8 +170,7 @@
                 Contact
             </h1>
             <p class="section-content-text">
-                Feel free to contact us at <strong>wenyuqing AT mail.ustc.edu.cn</strong> or <strong>wenyuqing AT megvii.com</strong>
-            </p>
+                Feel free to contact us at <strong>wenyuqing AT mail.ustc.edu.cn</strong> or <strong>wenyuqing AT megvii.com</strong> or <br> <strong>wangtiancai AT megvii.com</strong>
         </div>
     </div>
 </div>
